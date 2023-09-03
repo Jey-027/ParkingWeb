@@ -85,8 +85,12 @@ WSGI_APPLICATION = 'ParkingWeb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env('PST_NAME'),
+        'USER': env('PST_USER'),
+        'PASSWORD': env('PST_PASSWORD'),
+        'HOST': env('PST_HOST'),
+        'PORT': env('PST_PORT'),
     }
 }
 
