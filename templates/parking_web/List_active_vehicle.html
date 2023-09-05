@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Lista de vehiculos activos</h1>
+    <form method="post">
+        <div class="container">
+            <div class="column">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Entry time</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Vehicle Type</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for veh in vehicle_list %}
+                    <tr>
+                        <th>{{ veh.placa }}</th>
+                        <td>{{ veh.input }}</td>
+                        <td>{{ veh.status }}</td>
+                        <td>{{ veh.vehicle_type }}</td>
+                        <td><a href="{% url 'FinishRegister' veh.placa %}" class="button">Update</a></td>
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </form>
+
+
+</body>
+</html>
